@@ -35,6 +35,12 @@ class MakeReservtion extends GetxController {
     if (value.isEmpty) {
       return "الرجاء ادخال عدد الركاب";
     }
+    if (value.isNotEmpty) {
+      return "الرجاء ادخال ارقام فقط";
+    }
+    if (int.tryParse(value)!.isEven) {
+      return "الرجاء ادخال ارقام موجبة";
+    }
     if (int.tryParse(value)! > count) {
       return 'عدد المقاعد غير متوفر';
     }
